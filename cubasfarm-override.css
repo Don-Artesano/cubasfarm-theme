@@ -11212,16 +11212,23 @@ html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:has(.ti-review
 }
 
 /* Remove aspas decorativas antigas de qualquer elemento do Trustindex */
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item::before,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item::after,
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item > .ti-inner::before,
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item > .ti-inner::after,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item .ti-review-content::before,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item .ti-review-content::after,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item .ti-read-more::before,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item .ti-read-more::after,
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item > .ti-inner::before,
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item > .ti-inner::after,
 html body .ti-widget[data-layout-id][data-set-id] .ti-review-item > .ti-inner::before,
-html body .ti-widget[data-layout-id][data-set-id] .ti-review-item > .ti-inner::after,
-html body .ti-widget .ti-review-item .ti-review-content::after {
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item > .ti-inner::after {
 	display: none !important;
 	content: none !important;
-	background-image: none !important;
+	background: none !important;
+	mask-image: none !important;
+	-webkit-mask-image: none !important;
 }
 
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:has(.ti-review-image) > .ti-inner > .ti-review-text-container,
@@ -11350,25 +11357,51 @@ html body .ti-widget .ti-review-item.ti-image-layout-thumbnail .ti-date {
 	line-height: 1.25 !important;
 }
 
-/* Card de Resumo IA (sem foto): ancora editorial escura em Azul Onix */
+/* Card de Resumo IA (sem foto): ancora editorial escura em Azul Onix com texto 100% branco */
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) > .ti-inner,
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) > .ti-inner,
 html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) > .ti-inner {
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	gap: 14px !important;
 	background: var(--color-azul-onix) !important;
 	color: #ffffff !important;
 	padding: 28px 22px !important;
 	min-height: 400px !important;
-	justify-content: center !important;
 }
 
-html body .ti-widget .ti-review-item:not(:has(.ti-review-image)) .ti-name,
-html body .ti-widget .ti-review-item:not(:has(.ti-review-image)) .ti-review-content,
-html body .ti-widget .ti-review-item:not(:has(.ti-review-image)) .ti-review-content li {
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-name,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-name,
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) .ti-name {
 	color: #ffffff !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
 }
 
-html body .ti-widget .ti-review-item:not(:has(.ti-review-image)) .ti-date,
-html body .ti-widget .ti-review-item:not(:has(.ti-review-image)) .ti-read-more {
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-review-text-container,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-review-text-container,
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) .ti-review-text-container,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li,
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li {
+	color: rgba(255, 255, 255, 0.92) !important;
+	height: auto !important;
+	max-height: none !important;
+	line-height: 1.5 !important;
+}
+
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li::before,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li::before,
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) .ti-summary-list li::before {
+	filter: brightness(0) invert(1) !important;
+}
+
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-date,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-date,
+html body .ti-widget[data-layout-id][data-set-id] .ti-review-item:not(:has(.ti-review-image)) .ti-date,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-read-more,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:not(:has(.ti-review-image)) .ti-read-more {
 	color: rgba(255, 255, 255, 0.72) !important;
 }
 
