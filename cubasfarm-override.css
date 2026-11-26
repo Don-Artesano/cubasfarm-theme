@@ -1660,20 +1660,26 @@ html body .page-numbers.current {
 }
 
 /* Sidebar de Filtros Desktop */
+html body #produtos-main #menu-left-new,
 #menu-left-new {
 	background: transparent !important;
 	margin-top: 0 !important;
+	padding: 0 !important;
+	border: none !important;
 	border-radius: 0 !important;
+	box-shadow: none !important;
 	color: var(--text-primary) !important;
 }
 
+html body #produtos-main #menu-left-new .box-menu-left,
 .box-menu-left {
 	background: var(--surface-default) !important;
 	border: none !important;
-	border-radius: var(--radius-md) !important;
+	border-radius: var(--radius-lg) !important;
 	box-shadow: var(--shadow-sm) !important;
 	padding: var(--space-4) !important;
-	margin-bottom: var(--space-4) !important;
+	margin: 0 0 var(--space-3) 0 !important;
+	box-sizing: border-box !important;
 }
 
 .box-menu-left p {
