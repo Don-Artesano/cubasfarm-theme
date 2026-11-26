@@ -5976,8 +5976,6 @@ ul.atendimento-footer li svg {
 		margin: 0 !important;
 		padding: 0 !important;
 		border-radius: var(--radius-lg);
-		border: 1px solid rgba(255, 255, 255, 0.09) !important;
-		box-sizing: border-box !important;
 		box-shadow: var(--shadow-md);
 		background: var(--color-titanio-solido) !important;
 		overflow: visible !important;
@@ -9778,8 +9776,7 @@ html body .bricks--component-popup button[type="submit"]:hover {
 		height: 116px !important;
 		z-index: 1505 !important;
 		background: var(--color-titanio-solido) !important;
-		border: 1px solid rgba(255, 255, 255, 0.09) !important;
-		border-bottom: none !important;
+		border: none !important;
 		border-radius: 16px 16px 0 0 !important;
 		box-shadow: 0 8px 24px rgba(27, 33, 45, 0.14) !important;
 		overflow: hidden !important;
@@ -9789,7 +9786,6 @@ html body .bricks--component-popup button[type="submit"]:hover {
 	/* Em paginas sem barra de categorias mobile (Carrinho, Login, Checkout, Fale Conosco), fecha os 4 cantos */
 	html body:not(:has(#area-categorias-mobile)) #top-mobile-v2 {
 		border-radius: 16px !important;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.09) !important;
 	}
 
 	/* Alinhamento vertical exato (eixo y=35px) entre menu hamburguer, logo e carrinho no topo mobile */
@@ -10215,8 +10211,7 @@ html body .bricks--component-popup button[type="submit"]:hover {
 		height: 44px !important;
 		z-index: 1500 !important;
 		background: var(--color-azul-onix) !important;
-		border: 1px solid rgba(255, 255, 255, 0.09) !important;
-		border-top: none !important;
+		border: none !important;
 		border-radius: 0 0 16px 16px !important;
 		box-shadow: 0 10px 24px rgba(27, 33, 45, 0.16) !important;
 		overflow: hidden !important;
@@ -10232,7 +10227,7 @@ html body .bricks--component-popup button[type="submit"]:hover {
 		right: 12px !important;
 		width: calc(100% - 24px) !important;
 		margin-top: 0 !important;
-		border: 1px solid rgba(255, 255, 255, 0.10) !important;
+		border: none !important;
 		border-radius: 16px !important;
 		background: rgba(27, 33, 45, 0.94) !important;
 		backdrop-filter: blur(12px) !important;
@@ -10773,6 +10768,75 @@ html body .bricks--component-popup button[type="submit"]:hover {
 		letter-spacing: 0.06em !important;
 		text-transform: uppercase !important;
 		text-decoration: none !important;
+	}
+
+	/* Hierarquia tipografica refinada nos cards de produto mobile (Home, Categorias, Busca e Relacionados) */
+	html body .produto .nome a,
+	html body #produtos .produtos .produto .nome a,
+	html body .list-produtos .produto .nome a {
+		font-size: 12.5px !important;
+		font-weight: 500 !important;
+		line-height: 1.35 !important;
+		color: var(--color-azul-onix) !important;
+	}
+
+	/* "A partir" sutil e discreto, sem competir com titulo nem preco */
+	html body .produto .preco-p,
+	html body #produtos .produtos .produto .preco-p,
+	html body .list-produtos .produto .preco-p {
+		font-size: 11px !important;
+		font-weight: 500 !important;
+		line-height: 1.3 !important;
+		color: var(--text-secondary) !important;
+	}
+
+	/* Preco antigo riscado discreto */
+	html body .produto .preco-de,
+	html body .produto .valor-de,
+	html body .produto .preco-p .preco-de,
+	html body .produto .preco-p .preco-de strong {
+		font-size: 11px !important;
+		font-weight: 400 !important;
+		color: var(--text-secondary) !important;
+		opacity: 0.72 !important;
+		display: block !important;
+	}
+
+	/* Preco principal em destaque absoluto (hero do card) */
+	html body #produtos .produtos .produto .preco-p strong,
+	html body .list-produtos .produto .preco-p strong,
+	html body .produto .preco-p strong,
+	html body .produto .preco-p .valor-por {
+		font-size: 19px !important;
+		font-weight: 700 !important;
+		line-height: 1.15 !important;
+		letter-spacing: -0.015em !important;
+		color: var(--color-azul-onix) !important;
+		display: block !important;
+		margin-top: 2px !important;
+	}
+
+	/* Parcelamento e valor a vista claramente subordinados ao preco principal */
+	html body #produtos .produtos .produto .preco-g,
+	html body .list-produtos .produto .preco-g,
+	html body .produto .preco-g,
+	html body .produto .fpg_cartao,
+	html body .produto .fpg_boleto,
+	html body .produto .sem_juros {
+		font-size: 11px !important;
+		font-weight: 400 !important;
+		line-height: 1.4 !important;
+		color: var(--text-secondary) !important;
+	}
+
+	html body #produtos .produtos .produto .preco-g strong,
+	html body .list-produtos .produto .preco-g strong,
+	html body .produto .preco-g strong,
+	html body .produto .fpg_cartao strong,
+	html body .produto .fpg_boleto strong {
+		font-size: 11.5px !important;
+		font-weight: 600 !important;
+		color: var(--color-titanio-solido) !important;
 	}
 
 	html body #wrapper_internas > .ti-widget,
