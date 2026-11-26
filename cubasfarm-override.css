@@ -6176,6 +6176,37 @@ ul.atendimento-footer li svg {
 		            overflow 0ms 220ms allow-discrete !important;
 	}
 
+	/* Fallback Cross-Browser (Firefox, Safari 15-18 e navegadores sem Scroll-Driven Animations):
+	   desativa animation-timeline e mantem a capsula flutuante + barra de categorias 100% visivel */
+	@supports not (animation-timeline: scroll()) {
+		html body header#tp-lj,
+		html body header#tp-lj.fixed,
+		html body header#tp-lj.no-fixed {
+			animation: none !important;
+			top: var(--space-4) !important;
+			border-radius: var(--radius-lg) !important;
+		}
+
+		html body header#tp-lj #top,
+		html body header#tp-lj.fixed #top,
+		html body header#tp-lj.no-fixed #top {
+			animation: none !important;
+			border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+		}
+
+		html body header#tp-lj #header,
+		html body header#tp-lj.fixed #header,
+		html body header#tp-lj.no-fixed #header {
+			animation: none !important;
+			--da-cat-scroll: 1;
+			--da-cat-open: 1;
+			height: 48px !important;
+			opacity: 1 !important;
+			transform: none !important;
+			overflow: visible !important;
+		}
+	}
+
 	/* Hero Banner da Home: altura maior, fundo padrao Azul Onix, arte na base e cantos inferiores arredondados sobre os beneficios */
 	html body #area-slider-home {
 		position: relative !important;
