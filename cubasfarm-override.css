@@ -11425,6 +11425,23 @@ html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:n
 	}
 }
 
+/* Corrige o corte superior/inferior da logo do Google no cabecalho do Trustindex */
+html body .ti-widget .ti-header-logo,
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-header-logo,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-header-logo {
+	height: auto !important;
+	min-height: 26px !important;
+	overflow: visible !important;
+	display: inline-flex !important;
+	align-items: center !important;
+}
+
+html body .ti-widget .ti-header-logo .ti-header-logo-img {
+	position: static !important;
+	top: 0 !important;
+	display: block !important;
+}
+
 /* Popup de Notificacoes Push (OneSignal) — Identidade Don Artesano */
 html body #onesignal-slidedown-container #onesignal-slidedown-dialog {
 	border-radius: 16px !important;
