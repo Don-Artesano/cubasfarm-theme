@@ -11328,14 +11328,14 @@ html body .ti-widget.ti-goog .ti-review-item.ti-image-layout-thumbnail > .ti-inn
 	color: var(--text-secondary) !important;
 }
 
-/* Cabecalho do cliente (avatar + nome + data) deslocado para o rodape do card estilo feed */
+/* Cabecalho do cliente (avatar + nome + data) sem linha divisoria */
 html body .ti-widget.ti-goog .ti-review-item:has(.ti-review-image) > .ti-inner > .ti-review-header,
 html body .ti-widget .ti-review-item:has(.ti-review-image) > .ti-inner > .ti-review-header,
 html body .ti-widget.ti-goog .ti-review-item.ti-image-layout-thumbnail > .ti-inner > .ti-review-header {
 	order: 4 !important;
 	margin: auto 0 0 0 !important;
-	padding: 12px 0 0 0 !important;
-	border-top: 1px solid var(--border-subtle) !important;
+	padding: 8px 0 0 0 !important;
+	border-top: none !important;
 	display: flex !important;
 	align-items: center !important;
 	gap: 10px !important;
@@ -11423,4 +11423,33 @@ html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-review-item:n
 		padding: 24px 18px !important;
 		min-height: 368px !important;
 	}
+}
+
+/* Popup de Notificacoes Push (OneSignal) — Identidade Don Artesano */
+html body #onesignal-slidedown-container #onesignal-slidedown-dialog {
+	border-radius: 16px !important;
+	box-shadow: var(--shadow-lg) !important;
+	font-family: var(--font-body) !important;
+}
+
+html body #onesignal-slidedown-container #onesignal-slidedown-dialog .slidedown-body-message {
+	color: var(--color-azul-onix) !important;
+	font-family: var(--font-body) !important;
+}
+
+html body #onesignal-slidedown-container #onesignal-slidedown-dialog button.primary.slidedown-button,
+html body #onesignal-slidedown-container #onesignal-slidedown-allow-button {
+	background: var(--color-azul-onix) !important;
+	color: #ffffff !important;
+	border-radius: var(--radius-md) !important;
+	font-family: var(--font-body) !important;
+	font-weight: 600 !important;
+	box-shadow: none !important;
+}
+
+html body #onesignal-slidedown-container #onesignal-slidedown-dialog button.secondary.slidedown-button,
+html body #onesignal-slidedown-container #onesignal-slidedown-cancel-button {
+	color: var(--text-secondary) !important;
+	font-family: var(--font-body) !important;
+	font-weight: 600 !important;
 }
