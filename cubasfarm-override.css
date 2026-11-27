@@ -11248,8 +11248,17 @@ html body .ti-widget .ti-reviews-container {
 	position: relative !important;
 }
 
-/* Setas flutuantes circulares brancas sempre visiveis sobre as fotos (estilo Uana) */
+/* Setas flutuantes circulares brancas sempre visiveis sobre o centro vertical das fotos (estilo Uana) */
+html body #wrapper .ti-widget[data-trustindex-widget] .ti-controls,
+html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls,
 html body .ti-widget .ti-controls {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	height: 272px !important;
+	margin: 0 !important;
 	display: block !important;
 	opacity: 1 !important;
 	visibility: visible !important;
@@ -11264,7 +11273,7 @@ html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls .ti-
 html body .ti-widget .ti-controls .ti-prev,
 html body .ti-widget .ti-controls .ti-next {
 	position: absolute !important;
-	top: 136px !important;
+	top: 50% !important;
 	transform: translateY(-50%) !important;
 	width: 42px !important;
 	height: 42px !important;
