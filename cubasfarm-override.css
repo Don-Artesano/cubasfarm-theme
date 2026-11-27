@@ -11246,39 +11246,44 @@ html body .ti-widget .ti-widget-header {
 
 html body .ti-widget .ti-reviews-container {
 	position: relative !important;
+	padding-top: 52px !important;
 	box-sizing: border-box !important;
 }
 
-/* Desktop: respiro lateral de 52px para as setas arquiteturais ficarem 100% FORA das fotos */
-@media (min-width: 1025px) {
-	html body #wrapper .ti-widget[data-trustindex-widget] .ti-reviews-container,
-	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-reviews-container,
-	html body .ti-widget .ti-reviews-container {
-		padding: 0 52px !important;
-	}
-
-	html body #wrapper .ti-widget[data-trustindex-widget] .ti-widget-header,
-	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-widget-header,
-	html body .ti-widget .ti-widget-header {
-		margin: 0 52px !important;
-	}
+/* Titulo editorial a esquerda ("Avaliacoes de clientes") no mesmo padrao das vitrines da Home */
+html body .ti-widget .ti-reviews-container::before {
+	content: "Avaliações de clientes" !important;
+	position: absolute !important;
+	top: 2px !important;
+	left: 0 !important;
+	font-family: var(--font-display) !important;
+	font-size: 28px !important;
+	font-weight: 500 !important;
+	line-height: 1.2 !important;
+	color: var(--color-azul-onix) !important;
+	letter-spacing: -0.015em !important;
+	pointer-events: none !important;
 }
 
-/* Setas arquiteturais Don Artesano (brancas com borda sutil #d9d9d9, hover Azul Onix) FORA das fotos */
+/* Setas arquiteturais Don Artesano no canto superior direito na linha do titulo (identico as vitrines da Home) */
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-controls,
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls,
 html body .ti-widget .ti-controls {
 	position: absolute !important;
 	top: 0 !important;
-	left: 0 !important;
 	right: 0 !important;
-	width: 100% !important;
-	height: 100% !important;
+	left: auto !important;
+	width: auto !important;
+	height: 40px !important;
 	margin: 0 !important;
-	display: block !important;
+	padding: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-end !important;
+	gap: 8px !important;
 	opacity: 1 !important;
 	visibility: visible !important;
-	pointer-events: none !important;
+	pointer-events: auto !important;
 	z-index: 25 !important;
 }
 
@@ -11288,9 +11293,12 @@ html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls .ti-
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls .ti-next,
 html body .ti-widget .ti-controls .ti-prev,
 html body .ti-widget .ti-controls .ti-next {
-	position: absolute !important;
-	top: 50% !important;
-	transform: translateY(-50%) !important;
+	position: static !important;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	transform: none !important;
+	margin: 0 !important;
 	width: 40px !important;
 	height: 40px !important;
 	border-radius: var(--radius-full) !important;
@@ -11306,16 +11314,6 @@ html body .ti-widget .ti-controls .ti-next {
 	z-index: 30 !important;
 	cursor: pointer !important;
 	transition: background-color 180ms var(--easing-default), border-color 180ms var(--easing-default), box-shadow 180ms var(--easing-default) !important;
-}
-
-html body .ti-widget .ti-controls .ti-prev {
-	left: 4px !important;
-	right: auto !important;
-}
-
-html body .ti-widget .ti-controls .ti-next {
-	right: 4px !important;
-	left: auto !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev:hover,
@@ -11365,6 +11363,14 @@ html body .ti-widget .ti-controls .ti-next:hover::after {
 }
 
 @media (max-width: 1024px) {
+	html body .ti-widget .ti-reviews-container {
+		padding-top: 40px !important;
+	}
+
+	html body .ti-widget .ti-reviews-container::before {
+		font-size: 22px !important;
+	}
+
 	html body #wrapper .ti-widget[data-trustindex-widget] .ti-controls,
 	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls,
 	html body .ti-widget .ti-controls {
