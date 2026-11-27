@@ -11275,12 +11275,14 @@ html body .ti-widget .ti-controls .ti-next {
 	position: absolute !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
-	width: 42px !important;
-	height: 42px !important;
+	width: 36px !important;
+	height: 36px !important;
 	border-radius: var(--radius-full) !important;
-	background: rgba(255, 255, 255, 0.96) !important;
-	box-shadow: 0 4px 16px rgba(27, 33, 45, 0.18) !important;
-	border: 1px solid rgba(27, 33, 45, 0.08) !important;
+	background: rgba(27, 33, 45, 0.52) !important;
+	backdrop-filter: blur(8px) !important;
+	-webkit-backdrop-filter: blur(8px) !important;
+	box-shadow: 0 4px 12px rgba(27, 33, 45, 0.18) !important;
+	border: 1px solid rgba(255, 255, 255, 0.2) !important;
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
@@ -11289,23 +11291,23 @@ html body .ti-widget .ti-controls .ti-next {
 	pointer-events: auto !important;
 	z-index: 30 !important;
 	cursor: pointer !important;
-	transition: transform 180ms var(--easing-default), box-shadow 180ms var(--easing-default) !important;
+	transition: background-color 180ms var(--easing-default), transform 180ms var(--easing-default) !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev {
-	left: 10px !important;
+	left: 20px !important;
 	right: auto !important;
 }
 
 html body .ti-widget .ti-controls .ti-next {
-	right: 10px !important;
+	right: 20px !important;
 	left: auto !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev:hover,
 html body .ti-widget .ti-controls .ti-next:hover {
-	transform: translateY(-50%) scale(1.06) !important;
-	box-shadow: 0 6px 20px rgba(27, 33, 45, 0.24) !important;
+	background: rgba(27, 33, 45, 0.84) !important;
+	transform: translateY(-50%) scale(1.05) !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev::before,
@@ -11317,10 +11319,10 @@ html body .ti-widget .ti-controls .ti-next::before {
 html body .ti-widget .ti-controls .ti-prev::after {
 	content: "" !important;
 	display: block !important;
-	width: 9px !important;
-	height: 9px !important;
-	border-left: 2px solid var(--color-azul-onix) !important;
-	border-bottom: 2px solid var(--color-azul-onix) !important;
+	width: 8px !important;
+	height: 8px !important;
+	border-left: 1.75px solid #ffffff !important;
+	border-bottom: 1.75px solid #ffffff !important;
 	border-top: none !important;
 	border-right: none !important;
 	background: transparent !important;
@@ -11330,10 +11332,10 @@ html body .ti-widget .ti-controls .ti-prev::after {
 html body .ti-widget .ti-controls .ti-next::after {
 	content: "" !important;
 	display: block !important;
-	width: 9px !important;
-	height: 9px !important;
-	border-right: 2px solid var(--color-azul-onix) !important;
-	border-top: 2px solid var(--color-azul-onix) !important;
+	width: 8px !important;
+	height: 8px !important;
+	border-right: 1.75px solid #ffffff !important;
+	border-top: 1.75px solid #ffffff !important;
 	border-left: none !important;
 	border-bottom: none !important;
 	background: transparent !important;
