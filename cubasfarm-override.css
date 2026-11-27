@@ -11246,9 +11246,25 @@ html body .ti-widget .ti-widget-header {
 
 html body .ti-widget .ti-reviews-container {
 	position: relative !important;
+	box-sizing: border-box !important;
 }
 
-/* Setas flutuantes circulares brancas sempre visiveis sobre o centro vertical das fotos (estilo Uana) */
+/* Desktop: respiro lateral de 52px para as setas arquiteturais ficarem 100% FORA das fotos */
+@media (min-width: 1025px) {
+	html body #wrapper .ti-widget[data-trustindex-widget] .ti-reviews-container,
+	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-reviews-container,
+	html body .ti-widget .ti-reviews-container {
+		padding: 0 52px !important;
+	}
+
+	html body #wrapper .ti-widget[data-trustindex-widget] .ti-widget-header,
+	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-widget-header,
+	html body .ti-widget .ti-widget-header {
+		margin: 0 52px !important;
+	}
+}
+
+/* Setas arquiteturais Don Artesano (brancas com borda sutil #d9d9d9, hover Azul Onix) FORA das fotos */
 html body #wrapper .ti-widget[data-trustindex-widget] .ti-controls,
 html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls,
 html body .ti-widget .ti-controls {
@@ -11257,7 +11273,7 @@ html body .ti-widget .ti-controls {
 	left: 0 !important;
 	right: 0 !important;
 	width: 100% !important;
-	height: 272px !important;
+	height: 100% !important;
 	margin: 0 !important;
 	display: block !important;
 	opacity: 1 !important;
@@ -11275,14 +11291,12 @@ html body .ti-widget .ti-controls .ti-next {
 	position: absolute !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
-	width: 36px !important;
-	height: 36px !important;
+	width: 40px !important;
+	height: 40px !important;
 	border-radius: var(--radius-full) !important;
-	background: rgba(27, 33, 45, 0.52) !important;
-	backdrop-filter: blur(8px) !important;
-	-webkit-backdrop-filter: blur(8px) !important;
-	box-shadow: 0 4px 12px rgba(27, 33, 45, 0.18) !important;
-	border: 1px solid rgba(255, 255, 255, 0.2) !important;
+	background: var(--surface-default) !important;
+	box-shadow: var(--shadow-sm) !important;
+	border: 1px solid var(--border-default) !important;
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
@@ -11291,23 +11305,24 @@ html body .ti-widget .ti-controls .ti-next {
 	pointer-events: auto !important;
 	z-index: 30 !important;
 	cursor: pointer !important;
-	transition: background-color 180ms var(--easing-default), transform 180ms var(--easing-default) !important;
+	transition: background-color 180ms var(--easing-default), border-color 180ms var(--easing-default), box-shadow 180ms var(--easing-default) !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev {
-	left: 20px !important;
+	left: 4px !important;
 	right: auto !important;
 }
 
 html body .ti-widget .ti-controls .ti-next {
-	right: 20px !important;
+	right: 4px !important;
 	left: auto !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev:hover,
 html body .ti-widget .ti-controls .ti-next:hover {
-	background: rgba(27, 33, 45, 0.84) !important;
-	transform: translateY(-50%) scale(1.05) !important;
+	background: var(--color-azul-onix) !important;
+	border-color: var(--color-azul-onix) !important;
+	box-shadow: var(--shadow-md) !important;
 }
 
 html body .ti-widget .ti-controls .ti-prev::before,
@@ -11321,12 +11336,13 @@ html body .ti-widget .ti-controls .ti-prev::after {
 	display: block !important;
 	width: 8px !important;
 	height: 8px !important;
-	border-left: 1.75px solid #ffffff !important;
-	border-bottom: 1.75px solid #ffffff !important;
+	border-left: 1.75px solid var(--color-azul-onix) !important;
+	border-bottom: 1.75px solid var(--color-azul-onix) !important;
 	border-top: none !important;
 	border-right: none !important;
 	background: transparent !important;
 	transform: translateX(2px) rotate(45deg) !important;
+	transition: border-color 180ms var(--easing-default) !important;
 }
 
 html body .ti-widget .ti-controls .ti-next::after {
@@ -11334,12 +11350,71 @@ html body .ti-widget .ti-controls .ti-next::after {
 	display: block !important;
 	width: 8px !important;
 	height: 8px !important;
-	border-right: 1.75px solid #ffffff !important;
-	border-top: 1.75px solid #ffffff !important;
+	border-right: 1.75px solid var(--color-azul-onix) !important;
+	border-top: 1.75px solid var(--color-azul-onix) !important;
 	border-left: none !important;
 	border-bottom: none !important;
 	background: transparent !important;
 	transform: translateX(-2px) rotate(45deg) !important;
+	transition: border-color 180ms var(--easing-default) !important;
+}
+
+html body .ti-widget .ti-controls .ti-prev:hover::after,
+html body .ti-widget .ti-controls .ti-next:hover::after {
+	border-color: #ffffff !important;
+}
+
+@media (max-width: 1024px) {
+	html body #wrapper .ti-widget[data-trustindex-widget] .ti-controls,
+	html body #wrapper_internas .ti-widget[data-trustindex-widget] .ti-controls,
+	html body .ti-widget .ti-controls {
+		display: none !important;
+	}
+}
+
+/* Setas das vitrines de produtos da Home (.navs-slider-produtos): mesmo padrao arquitetural Don Artesano */
+@media (min-width: 1025px) {
+	html body .area-produtos-home .navs-slider-produtos {
+		z-index: 25 !important;
+		pointer-events: none !important;
+	}
+
+	html body .area-produtos-home .navs-slider-produtos-int a {
+		width: 40px !important;
+		height: 40px !important;
+		border-radius: var(--radius-full) !important;
+		background: var(--surface-default) !important;
+		border: 1px solid var(--border-default) !important;
+		box-shadow: var(--shadow-sm) !important;
+		pointer-events: auto !important;
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		z-index: 30 !important;
+		transition: background-color 180ms var(--easing-default), border-color 180ms var(--easing-default), box-shadow 180ms var(--easing-default) !important;
+	}
+
+	html body .area-produtos-home .navs-slider-produtos-int a svg {
+		width: 13px !important;
+		height: 13px !important;
+	}
+
+	html body .area-produtos-home .navs-slider-produtos-int a svg,
+	html body .area-produtos-home .navs-slider-produtos-int a svg * {
+		fill: var(--color-azul-onix) !important;
+		transition: fill 180ms var(--easing-default) !important;
+	}
+
+	html body .area-produtos-home .navs-slider-produtos-int a:not(.swiper-button-disabled):hover {
+		background: var(--color-azul-onix) !important;
+		border-color: var(--color-azul-onix) !important;
+		box-shadow: var(--shadow-md) !important;
+	}
+
+	html body .area-produtos-home .navs-slider-produtos-int a:not(.swiper-button-disabled):hover svg,
+	html body .area-produtos-home .navs-slider-produtos-int a:not(.swiper-button-disabled):hover svg * {
+		fill: #ffffff !important;
+	}
 }
 
 /* Cards COM foto real: foto alta full-bleed no topo (272px), estrelas -> nome -> comentario alinhados a esquerda */
